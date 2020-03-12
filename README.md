@@ -141,5 +141,67 @@
       background-color: red;
     }
    ```
+7. Selector 규칙을 줄이세요.
+   
+   ```css
+      /* 안좋은 코드 */
+      .role-stat h1,
+      .role-stat h2,
+      .role-stat p,
+      .role-stat a,
+      .role-su h1,
+      .role-su h2,
+      .role-su p,
+      .role-su a {
+        color: #FFF;
+      }
 
+      .features-1 h1,
+      .features-1 h2,
+      .features-1 p,
+      .features-2 h1,
+      .features-2 h2,
+      .features-2 p,
+      .features-3 h1,
+      .features-3 h2,
+      .features-3 p {
+        color: #FFF;
+      }
+
+      .features-1 a,
+      .features-2 a,
+      .features-3 a {
+        color: #FFF;
+        text-decoration: underline;
+      }
+
+      .feature-4 h1,
+      .feature-4 h2,
+      .feature-4 p {
+        color: #FFF;
+      }
+
+      .feature-4 a,
+      .feature-4 a,
+      .feature-4 a {
+        color: #FFF;
+        text-decoration: underline;
+      }
+   ```
+   위와 같은 코드는 HTML을 수정할때마다 style을 추가/제거를 병행해야 하기때문에 css 코딩을 더욱 어렵게 만듭니다. 그래서 아래와 같이 selector 규칙을 간소화 하게 되면 HTML을 수정해도 css 부분은 수정하지 않아도 됩니다.
+   ```css
+      /* 추천 코드 */
+      .text-white {
+        color: #FFF;
+      }
+
+      .text-underline {
+        text-decoration: underline;
+      }
+   ```
+   또한 위와 같은 추천 코드르 형식으로 작성을 하게되면 class를 끊임없이 재사용할 수 있다는 장점도 가지고 있습니다.
+
+8. Javascript 훅을 위한 접두사를 사용하세요.
+
+   css style을 위해 class를 넣다보면 Javascript 이벤트를 위한 class가 필요할 때가 있습니다. 그럴때 css style을 위한 class를 쓰지말고 `js-`라는 접두사를 붙인 class를 따로 만들어 오직 Javasciprt에서만 사용을 하도록 하면 css style과 Javascript 부분이 분리가 되기때문에 코드 유지보수가 쉬워집니다.
    
